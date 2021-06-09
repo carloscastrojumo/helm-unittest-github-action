@@ -11,7 +11,7 @@ jobs:
     name: A job to say hello
     steps:
       - name: upgrade helm
-        run: sudo snap install helm
+        run: sudo snap install --classic helm 
 
       - name: install git
         run: sudo apt-get install git

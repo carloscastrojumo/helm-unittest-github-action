@@ -11,8 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     container: 
       image: quintush/helm-unittest:3.3.0-0.2.2
+      options: "--entrypoint /bin/sh"
     steps:
       - name: Check helm unittest
         run: |
-          helm plugin install https://github.com/quintush/helm-unittest
           helm plugin list

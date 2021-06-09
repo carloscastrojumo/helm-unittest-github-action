@@ -6,11 +6,13 @@ on:
 
 name: Build
 jobs:
-  node-docker:
+  unit_test:
+    name: "Run unit tests"
     runs-on: ubuntu-latest
+    container: 
+      image: quintush/helm-unittest:3.3.0-0.2.2
     steps:
-         - name: Log the node version
-           run: |
-             node -v
-             cat /etc/os-release
-             pwd
+      - name: Check helm unittest
+        run: |
+          helm plugin install https://github.com/quintush/helm-unittest
+          helm plugin list

@@ -1,0 +1,17 @@
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+
+name: Build
+jobs:
+  unit_test:
+    name: "Run unit tests"
+    runs-on: ubuntu-latest
+    container: 
+      image: quintush/helm-unittest:3.3.0-0.2.2
+    steps:
+      - name: Check helm unittest
+        run: |
+          helm unittest --help

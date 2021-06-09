@@ -11,9 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     container: 
       image: quintush/helm-unittest:3.3.0-0.2.2
+      entrypoint: /bin/sh
     steps:
       - name: Check helm unittest
         run: |
-          helm plugin list
+          helm version
           which helm
           pwd

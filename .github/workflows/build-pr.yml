@@ -11,10 +11,13 @@ jobs:
     name: A job to say hello
     steps:
       - name: install git
-        run: sudo apt-get install git
+        run: sudo apt-get install helm git
+
       - name: install helm unittest plugin
         run:  helm install plugin https://github.com/quintush/helm-unittest
+
       - name: git-checkout
         uses: actions/checkout@v1
+
 
 

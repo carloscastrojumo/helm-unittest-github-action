@@ -6,10 +6,12 @@ on:
 
 name: Build
 jobs:
-  unit_test:
-    name: "Run unit tests"
+  node-docker:
     runs-on: ubuntu-latest
+    container:
+      image: node:14.15.0-alpine3.12
     steps:
-      - name: Check helm unittest
-        run: |
-          helm version
+         - name: Log the node version
+           run: |
+             node -v
+             cat /etc/os-release  

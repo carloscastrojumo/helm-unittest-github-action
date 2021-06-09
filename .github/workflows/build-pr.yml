@@ -14,4 +14,6 @@ jobs:
     steps:
       - name: Check helm unittest
         run: |
-          helm unittest --help
+          helm plugin list
+          which helm
+          pwd

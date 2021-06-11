@@ -17,10 +17,10 @@ jobs:
         run: wget https://github.com/quintush/helm-unittest/releases/download/v0.2.6/helm-unittest-linux-amd64-0.2.6.tgz
 
       - name: upgrade helm
-        run: ls -lisa $HOME/.cache/helm
+        run: mkdir -p $HOME/.cache/helm/plugins/https-github.com-quintush-helm-unittest
 
       - name: extract helm unittest
-        run: mkdir $HOME/.cache/helm/plugins/https-github.com-quintush-helm-unittest && tar -zxvf helm-unittest-linux-amd64-0.2.6.tgz -C $HOME/.cache/helm/plugins/https-github.com-quintush-helm-unittest
+        run: tar -zxvf helm-unittest-linux-amd64-0.2.6.tgz -C $HOME/.cache/helm/plugins/https-github.com-quintush-helm-unittest
 
       - name: list helm plugins
         run: helm plugins list

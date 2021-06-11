@@ -31,5 +31,5 @@ jobs:
         uses: actions/checkout@v1
 
       - name: run helm unittests 
-        run: helm unittest -3 -v charts/microservice/ci/microservice-values-new-ingress.yaml charts/microservice/
+        run: ls -lisa
 

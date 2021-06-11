@@ -14,7 +14,7 @@ jobs:
         run: sudo snap install --classic helm 
 
       - name: helm version
-        run: helm verison
+        run: helm version
 
       - name: install helm unittest plugin
         run:  helm install plugin https://github.com/quintush/helm-unittest

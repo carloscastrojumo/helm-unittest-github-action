@@ -23,7 +23,7 @@ jobs:
         run: tar -zxvf helm-unittest-linux-amd64-0.2.6.tgz -C $HOME/.cache/helm/plugins/https-github.com-quintush-helm-unittest
 
       - name: list helm plugins
-        run: helm plugins list
+        run: helm plugin list
 
       - name: git-checkout
         uses: actions/checkout@v1

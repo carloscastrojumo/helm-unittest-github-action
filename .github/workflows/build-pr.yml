@@ -13,11 +13,17 @@ jobs:
       - name: upgrade helm
         run: sudo snap install --classic helm 
 
-      - name: helm version
-        run: helm version
+      - name: download helm unittest
+        run: wget https://github.com/quintush/helm-unittest/releases/download/v0.2.6/helm-unittest-linux-amd64-0.2.6.tgz
 
-      - name: install helm unittest plugin
-        run:  helm install plugin https://github.com/quintush/helm-unittest
+      - name: extract helm unittest
+        run: tar -zxcf helm-unittest-linux-amd64-0.2.6.tgz
+
+      - name: install helm unittest
+        run: mv helm-unittest-linux-amd64-0.2.6 $HOME/.cache/helm
+
+      - name: list helm plugins
+        run: helm plugins list
 
       - name: git-checkout
         uses: actions/checkout@v1

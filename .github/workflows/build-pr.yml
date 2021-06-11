@@ -13,8 +13,8 @@ jobs:
       - name: upgrade helm
         run: sudo snap install --classic helm 
 
-      - name: install git
-        run: sudo apt-get install git
+      - name: helm version
+        run: helm verison
 
       - name: install helm unittest plugin
         run:  helm install plugin https://github.com/quintush/helm-unittest
